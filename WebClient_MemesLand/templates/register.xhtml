@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+	<head>
+		<title>Sample CGI Script</title>
+		<meta name="description" content="Simple page to test CGI." />
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+		<meta http-equiv="Content-Language" content="fr" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<link rel="start" title="Accueil" href="index.xhtml" />
+		
+	</head>
+	
+	<body>
+	  
+		<h1> Sample Register Script </h1>
+
+		<p>Submitted values :</p>
+		<ul>
+			<li>Username: ${username}</li>
+			<li>Email: ${useremail}</li>
+			<li>Password: ${userpwd}</li>
+			<li>First name: ${firstname}</li>
+			<li>Last name: ${lastname}</li>
+			<li>Birthdate: ${birthdate}</li>
+		</ul>
+		
+		<!--<h2> Form </h2>
+		
+		<form method="post" action="/htbin/register.py">
+			<ul>
+				<li>Username: <input type="text" name="username" value="${username}" /></li>
+				<li>Email: <input type="text" name="useremail" value="${useremail}" /></li>
+				<li>Password: <input type="text" name="userpwd" value="****" /></li>
+				<li>First name: <input type="text" name="firstname" value="${firstname}" /></li>
+				<li>Last name: <input type="text" name="lastname" value="${lastname}" /></li>
+				<li>Birthdate: <input type="text" name="birthdate" value="${birthdate}" /></li>
+			</ul>
+			<p><input type="submit" value="Register" /><input type="reset" value="Clear" /></p>
+		</form>-->
+		<a href="/">Retour &agrave; la page d'accueil</a>
+	
+	</body>
+
+</html>
+

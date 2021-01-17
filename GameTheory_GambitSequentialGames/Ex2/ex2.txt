@@ -1,0 +1,17 @@
+Exercice 2
+
+1) Voir ex2q1.gbt pour voir l'arbre complet avec chaque valeur de la roulette.
+On en déduit les gains (a partir des probabilités) suivants :
+
+I : 1 / II : 2 => 5/9
+I : 1 / II : 3 => 4/9
+I : 2 / II : 1 => 4/9
+I : 2 / II : 3 => 6/9
+I : 3 / II : 1 => 5/9
+I : 3 / II : 2 => 3/9
+
+2) Les gains de chaque joueur représentent leur chance de gagner le jeu.
+
+3) On convertit les fichiers en .nfg afin de fixer la forme normale (strategic) du jeu.
+
+4) Voir les deux fichiers correspondants.

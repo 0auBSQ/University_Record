@@ -1,0 +1,73 @@
+Tp5 - Sockets
+
+Exercice 1
+printf : 3 (fonctions de stdio.h)
+pwd : 1 (commande)
+read : 2 (syscall)
+
+Exercice 2
+Le syscall write est dans la section 2
+la commande write (pour envoyer un message) est dans la section 1
+
+Exercice 3
+Les implémentations c des appels systems comme write, read ou open appellent
+directement syscall() avec le numéro attribué a l'appel systeme en assembleur,
+la ou printf est une fonction de la bibliotheque stdio traitant un format à
+partir d'arguments variadiques.
+
+Exercice 4
+(Verifier avec echo -n "[message]" > /dev/udp/127.0.0.1/[port])
+
+Exercice 5
+La fonction htons change l'ordre des octets pour les adapter à l'endianess du
+format reseau, ce qui est verifiable en affichant la valeur du membre s_addr.
+
+Exercice 7
+D'après le man, inet_aton() conserve l'addresse au format reseau, ne necessitant
+donc aucun appel a htonl().
+
+Exercice 9
+Les messages s'affichent sur le serveur au fur et à mesure qu'ils sont reçus.
+Quitter le client n'affecte pas le serveur.
+
+Exercice 11
+UDP est sans connection et ne conserve que peu d'informations de l'emetteur,
+ce qui fait que le protocole proposé n'est pas adapté à UDP.
+
+Exercice 12
+4 sockets au total, 1 pour le serveur et 3 pour 3 clients.
+
+Exercice 15
+Le protocole TCP est un protocole avec connection, l'appel systeme recv()
+utilisant le socket client (contrairement au socket serveur dans le cas
+du protocole UDP) peut verifier si le client répond et reçoit 0 si le
+client est déconnecté.
+Dans le cas de send, le retour est de -1 si le client est déconnecté.
+
+Exercice 16
+Le programme n'accepte (pour l'instant) qu'un seul client.
+Si plusieurs clients se connectent en même temps, seul le premier client est
+accepté.
+Les clients suivants sont mis en attente jusque la limite définie par l'appel
+systeme listen(), et au dela la connection est tout simplement refusée.
+Pour accepter plus de clients, on peut creer un socket par client et résoudre
+les appels de recv() et send() en non-bloquant afin qu'un client ne bloque
+pas toute la file, la solution du multithreading (pthread) est également
+envisagable en attribuant un thread à chaque client.
+
+Exercice 19
+J'ai ici choisi une durée d'attente de 10ms, il est préférable de definir une durée assez faible afin de permettre une spontanéité des messages mais sans en definir une trop faible afin d'eviter une surconsommation des ressources de la machine.
+
+Exercice 21
+200 : Success
+301 : Temporarly Moved (Redirection)
+302 : Permanantly Moved (Redirection)
+400 : Bad request (Erreur client)
+403 : Forbidden (Erreur client, acces a une page non authorisé)
+404 : Not found (Erreur client, ressource introuvable)
+418 : I'm a teapot
+500 : Internal server error (Erreur serveur, peut etre une erreur SQL, une erreur de parsing, etc)
+
+Exercice 22
+$ telnet www.google.fr 80 > google.html
+GET /

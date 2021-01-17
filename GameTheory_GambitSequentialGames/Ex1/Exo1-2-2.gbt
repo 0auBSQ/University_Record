@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gambit:document xmlns:gambit="http://gambit.sourceforge.net/" version="0.1">
+<colors>
+<player id="-1" red="0" green="0" blue="0" />
+<player id="0" red="154" green="205" blue="50" />
+<player id="1" red="255" green="0" blue="0" />
+<player id="2" red="0" green="0" blue="255" />
+</colors>
+<font size="10" family="74" face="Arial" style="90" weight="92" />
+<autolayout>
+<nodes size="10" spacing="50" chance="dot" player="dot" terminal="dot"/>
+<branches size="60" tine="20" branch="forktine" labels="horizontal"/>
+<infosets connect="all" style="circles"/>
+</autolayout>
+<labels abovenode="label" belownode="isetid" abovebranch="label" belowbranch="probs" />
+<numbers decimals="4"/>
+<game>
+<efgfile>
+EFG 2 R "Untitled Extensive Game" { "Player 1" "Player 2" }
+""
+
+p "" 2 1 "" { "S'oppose" "Accepte" } 0
+p "" 1 1 "" { "Entre" "N'entre pas" } 0
+t "" 1 "" { -3, -2 }
+t "" 2 "" { 0, 4 }
+p "" 1 2 "" { "Entre" "N'entre pas" } 0
+t "" 3 "" { 2, 3 }
+t "" 4 "" { 0, 4 }
+</efgfile>
+<analysis type="list">
+<description>
+All equilibria by enumeration of mixed strategies in strategic game
+</description>
+<profile type="behav">
+1,0,1,0,0,1
+</profile>
+<profile type="behav">
+0,1,1,0,1,0
+</profile>
+<profile type="behav">
+1/6,5/6,1,0,0,1
+</profile>
+<profile type="behav">
+0,1,0,1,1,0
+</profile>
+</analysis>
+</game>
+</gambit:document>

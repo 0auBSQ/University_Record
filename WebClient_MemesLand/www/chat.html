@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <!-- PARAMETRE -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Meme History Land">
+    <meta name="keywords" content="Meme,Picture,Gag,Funny">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./css/forme.css">
+    <link rel="icon" href="./img/favicon.ico">
+    <script async type="text/javascript" src="./js/stickynav.js"></script>
+    <title>MemesLand</title>
+  </head>
+  <!-- CORPS DE LA PAGE -->
+  <body>
+    <!-- LOGO ET MENU -->
+    <header>
+      <img src="./img/logo.png" alt="oui" class="logo" id="top">
+      <nav class="menu" id="navbar">
+        <a class="nav" href="./index.html">Accueil</a>
+        <a class="nav" href="./history.html">Histoire</a>
+        <a class="nav" href="./gallery.html">Galerie</a>
+        <a class="nav cur" href="./chat.html">Chat</a>
+      </nav>
+    </header>
+    <!-- BARRE LATERALE -->
+    <div class="left_bar">
+      <script src="./js/ajaxlogin.js"></script>
+      <aside id="loginform">
+        <form id="formlog">
+          <p class="adv">Identifiant</p>
+          <input class="log" type="text" name="username" id="unlog" value="" />
+          <br />
+          <p class="adv">Mot de passe</p>
+          <input class="log" type="password" name="userpwd" id="uplog" value="" />
+          <br />
+          <br />
+          <input class="log button" type="submit" name="submit" value="Se connecter" id="uslog">
+          <br />
+        </form>
+        <a class="centerf" href="register.html">
+          <p>Creer un compte</p>
+        </a>
+      </aside>
+      <aside>
+        <a href="https://www.youtube.com/watch?v=j9V78UbdzWI">
+        <img class="adv" src="./img/gallery/17.jpg" alt="Garanti sans prince ivoirien !" title="Garanti sans prince ivoirien !"/>
+        </a>
+        <p class="adv">Offrez vous un enterrement de seigneur au Ghana !</p>
+      </aside>
+      <aside>
+        <a href="https://www.youtube.com/watch?v=NAeQAuaChQ8">
+        <img class="adv" src="./img/gallery/18.png" alt="Metacritic 100/100" title="Metacritic 100/100"/>
+        </a>
+        <p class="adv">Le cross-over le plus attendu de tout les temps !</p>
+      </aside>
+    </div>
+    <!-- COEUR DE LA PAGE -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+    <script src="./js/chat.js"></script>
+    <section id="chatmain">
+      <figure>
+        <h1 class="centerf" id="musique">Chat</h1>
+      </figure>
+      <figure>
+        <div id="chatwin">
+        </div>
+      </figure>
+      <figure>
+        <textarea id="chatinput"></textarea>
+        <input class="register button" id="chatsend" type="submit" name="submit" value="Envoyer">
+      </figure>
+    </section>
+    <footer>
+      <p>MemesLand - 2020</p>
+      <hr>
+      <p>Fondateurs :</p>
+      <ul>
+        <li>MARRACCINI Raphael</li>
+        <li>NGUYEN Tristan</li>
+      </ul>
+      <a href="#top">Haut de page</a>
+    </footer>
+  </body>
+</html>

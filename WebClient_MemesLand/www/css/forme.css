@@ -1,0 +1,263 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 1% 5%;
+	background-image: url("../img/bg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-color: #202020;
+}
+
+@media (orientation: landscape) {
+	section {
+		color: white;
+		position: relative;
+		padding-top: 1%;
+		padding-bottom: 1%;
+		padding-left: 20%;
+		background-color: rgba(32, 32, 32, 0.5);
+	}
+	.left_bar {
+		margin-top: 1%;
+		margin-right: 1%;
+		width: 20%;
+		float: left;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		background-color: #202020;
+	}
+	img.adv {
+		margin-left: 4%;
+		margin-top: 5%;
+		width: 90%;
+		border-style: outset;
+		border-color: black;
+		transition: transform .15s;
+	}
+}
+
+@media (orientation: portrait) {
+	section {
+		color: white;
+		position: relative;
+		padding-top: 1%;
+		padding-bottom: 1%;
+		padding-left: 0%;
+		background-color: rgba(32, 32, 32, 0.5);
+	}
+	.left_bar {
+		padding-bottom: 3%;
+		max-width: 100%;
+		height: 30vh;
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		background-color: #202020;
+	}
+	img.adv {
+		margin-left: 14%;
+		margin-top: 5%;
+		width: 70%;
+		border-style: outset;
+		border-color: black;
+		transition: transform .15s;
+	}
+	aside {
+		min-width: 30%;
+	}
+}
+
+header {
+	background-color: #202020;
+	padding-bottom: 1%;
+}
+
+nav.sticky {
+	position: fixed;
+	width: 90%;
+	top: 0;
+}
+
+figure {
+	padding: 10px;
+	border: 2px solid white;
+	border-radius: 25px;
+	background-color: rgba(48, 48, 48, 0.9);
+}
+
+figure.linked:hover {
+	transform: scale(1.06) rotate(2deg);
+	border: 2px solid #777;
+}
+
+figure.linked {
+	transition: transform .15s;
+}
+
+img.figimg {
+	margin-left: 5%;
+	border-radius: 25px;
+	width: 90%;
+	height: auto;
+}
+
+img.adv:hover {
+	transform: scale(1.1);
+}
+
+aside {
+	margin-bottom: 4%;
+	z-index: 4;
+}
+
+footer {
+	padding-top: 1%;
+	padding-bottom: 1%;
+	margin-bottom: 1%;
+	padding-left: 4%;
+	padding-right: 4%;
+	background-color: #333;
+	color: white;
+}
+
+img.logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	width: 30vmin;
+}
+
+
+/* barre de navigation */
+
+nav.menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	text-align: center;
+	z-index: 5;
+}
+
+a {
+	color: white;
+}
+
+a.nav {
+	font-size: 2vh;
+	display: inline-block;
+	color: white;
+	padding: 1.6vh 5vh;
+	text-decoration: none;
+}
+
+a.cur {
+	background-color: green;
+}
+
+a.nav:hover {
+	display: inline-block;
+	color: white;
+	background-color: gray;
+	padding: 1.6vh 5vh;
+	text-decoration: none;
+}
+
+
+/* gallery */
+
+figcaption {
+	color: white;
+	text-align: center;
+	font-size: 2vh;
+}
+
+hr {
+	color: white;
+}
+
+p {
+	font-size: 2vh;
+}
+
+p.adv {
+	font-size: 2vh;
+	margin-left: 5%;
+	width: 90%;
+	text-align: center;
+	color: white;
+}
+
+ul {
+	font-size: 2vh;
+}
+
+h1 {
+	font-size: 4vh;
+}
+
+.centerf {
+	text-align: center;
+}
+
+input.log {
+	margin-left: 5%;
+	width: 90%;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+input.register {
+	margin-left: 30%;
+	width: 40%;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+input.button:hover {
+	background-color: blue;
+	cursor: pointer;
+}
+
+input.button:active {
+	background-color: #ADD8E6;
+}
+
+span.errormsg {
+	font-size: 2vh;
+	text-align: center;
+	color: red;
+}
+
+span#successmsg {
+	font-size: 2vh;
+	text-align: center;
+	color: green;
+}
+
+div#chatwin {
+	overflow: auto;
+	padding: 10px;
+	height: 50vh;
+}
+
+textarea#chatinput {
+	overflow: auto;
+	resize: none;
+	margin: 2%;
+	width: 95%;
+	height: 10vh;
+}
+
+td {
+	padding: 0;
+	margin: 0;
+}

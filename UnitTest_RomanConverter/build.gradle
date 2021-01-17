@@ -1,0 +1,16 @@
+plugins {
+  id 'java'
+}
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+  testCompile 'org.hamcrest:hamcrest-all:1.3'
+}
+
+wrapper {
+  gradleVersion = '4.10.2'
+}

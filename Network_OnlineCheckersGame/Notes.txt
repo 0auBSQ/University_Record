@@ -1,0 +1,100 @@
+Protocole de transport choisi : TCP
+TCP est orienté connection, garantit l'arrivage des paquets et fournit un accusé de réception à l'emetteur.
+UDP est sans connection et ne me permet de savoir que l'addresse IP de l'emmeteur.
+Je stocke, côté serveur, différentes informations quant aux clients ainsi que leur socket, ce que le protocole UDP ne me permet pas.
+
+Le protocole côté application établi ici est un protocole en partie inspiré du protocole HTTP.
+Il utilise le port 42421 (par defaut)
+Tout comme le protocole HTTP, il utilise différentes methodes pré-établies et retourne un code en complément de la reponse.
+Cependant, contrairement au protocole HTTP, ce protocole n'est pas sans état (Plusieurs informations sont stockées sur le serveur et necessaires afin d'assurer le bon fonctionnement de celui ci)
+
+Codes retour et reponses :
+
+2XX : Success
+4XX : Erreur client
+5XX : Erreur serveur
+6XX : Informations complémentaires de jeu
+
+200 : Success (La réponse peut contenir des informations supplémentaires)
+400 : Nombre de jetons invalide
+401 : Le compte existe déjà
+402 : L'utilisateur cible n'est pas en train de jouer
+403 : Caractères invalides
+404 : Le compte sur lequel vous essayez de vous connecter n'existe pas
+405 : Non autorisé (Token manquant, non utilisé ici)
+406 : Nom d'utilisateur trop long (Limité à 16 caractères)
+407 : Tentative de placement de jeton alors que c'est le tour de l'adversaire
+408 : Tentative de placement incorrect
+409 : Nom d'utilisateur ou mot de passe trop court
+410 : La requete n'existe pas
+411 : Déjà connecté
+412 : Déjà entrain d'héberger une partie (Utilisé mais la situation n'arrivera jamais, une erreur 414 arrivera généralement avant)
+413 : Match complet
+414 : Déjà entrain de jouer ou en mode spectateur
+418 : Ho ho ho ha ha ho ho ho hi hi ha https://www.youtube.com/watch?v=6n3pFFPSlW4&ab_channel=angie8051
+500 : Erreur interne au serveur
+600 : Un second joueur a rejoint la partie (Le message de réponse contient le nom d'utilisateur de l'invité)
+601 : L'invité à posé une pièce (Le message de réponse contient : |xo|yo|x|y|px|py avec xo/yo coordonnées d'origine de la pièce, x/y nouvelles coordonnées et px/py (si prise) informations de la pièce prise)
+602 : L'hote à posé une pièce (voir 601)
+603 : Une tentative de triche à eu lieu (Termine la partie prématurément)
+604 : Changement de tour (Donne la main à l'autre joueur si pas de rafle)
+605 : Début de rafle (Ne change pas le tour, le message de réponse contient : |x|y coordonnées de la pièce effectuant la rafle)
+606 : Fin de partie (Termine la partie, retourne l'username du vainqueur)
+
+Les codes retour de type 6XX sont des cas particuliers, puisqu'il visent à notifier un client de l'action d'un autre client.
+
+Methodes :
+
+(Accessible en invité)
+
+CREATE|[user]|[pwd]
+Crée un compte utilisateur
+user : Nom d'utilisateur
+pwd : Mot de passe
+[Retour] : Status success seul
+
+CONNECT|[user]|[pwd]
+Se connecte à un compte utilisateur
+user : Nom d'utilisateur
+pwd : Mot de passe
+[Retour] : Jeton de connection
+
+SPECTATE|[user]
+Mode spectateur
+user : Nom d'utilisateur
+[Retour] : Status success seul
+
+STOP
+Sort du mode spectateur
+[Retour] : Status success seul
+
+(Accessible si connecté seulement)
+
+(Le [session token] pour les operations a été retiré et remplacé par un simple booléen côté serveur)
+
+HOST
+Crée une salle qu'un joueur pourra rejoindre
+(Non utilisé) session token : Jeton de connection (verifié à chaque opération)
+[Retour] : Status success seul
+
+FETCH
+Liste toutes les salles actuellement ouvertes
+(Non utilisé) session token : Jeton de connection
+[Retour] : Noms d'utilisateur hôtes séparés par des pipes |
+
+JOIN|[user]
+Rejoint une salle en fonction du nom utilisateur de l'hôte, envoie un message qui signale l'arrivée du nouveau joueur
+(Non utilisé) session token : Jeton de connection
+user : Nom d'utilisateur hôte de la salle à rejoindre
+[Retour] : Status success seul, status 600 envoyé à l'hôte
+
+PLAY|[xo]|[yo]|[x]|[y]
+Essaye de placer une dame (Username défini à partir du token)
+Si le retour est un code 407 ou 408 (Tentative de triche), les deux joueurs ainsi que les spectateurs seront avertis et le client frauduleux sera affiché sur le mur de la honte.
+(Non utilisé) session token : Jeton de connection
+xo : Coordonnée x d'origine
+yo : Coordonnée y d'origine
+x : Coordonnée x du placement
+y : Coordonnée y du placement
+[Retour] : Coordonnées de la piece, aux deux joueurs ainsi qu'à tout les spectateurs
+

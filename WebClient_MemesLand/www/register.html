@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- PARAMETRE -->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Meme History Land">
+    <meta name="keywords" content="Meme,Picture,Gag,Funny">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./css/forme.css">
+    <link rel="icon" href="./img/favicon.ico">
+    <script async type="text/javascript" src="./js/stickynav.js"></script>
+    <title>MemesLand</title>
+  </head>
+
+  <!-- CORPS DE LA PAGE -->
+
+  <body>
+
+    <!-- LOGO ET MENU -->
+
+    <header>
+      <img src="./img/logo.png" alt="oui" class="logo" id="top">
+      <nav class="menu" id="navbar">
+        <a class="nav" href="./index.html">Accueil</a>
+        <a class="nav" href="./history.html">Histoire</a>
+        <a class="nav" href="./gallery.html">Galerie</a>
+        <a class="nav" href="./chat.html">Chat</a>
+      </nav>
+    </header>
+
+    <!-- BARRE LATERALE -->
+
+    <div class="left_bar">
+      <script src="./js/ajaxlogin.js"></script>
+      <aside id="loginform">
+        <form id="formlog">
+          <p class="adv">Identifiant</p>
+          <input class="log" type="text" name="username" id="unlog" value="" />
+          <br />
+          <p class="adv">Mot de passe</p>
+          <input class="log" type="password" name="userpwd" id="uplog" value="" />
+          <br />
+          <br />
+          <input class="log button" type="submit" name="submit" value="Se connecter" id="uslog">
+          <br />
+        </form>
+        <a class="centerf" href="register.html">
+          <p>Creer un compte</p>
+        </a>
+      </aside>
+
+      <aside>
+        <a href="https://koryogroup.com">
+        <img class="adv" src="./img/gallery/4.jpg" alt="Visitez notre grande nation" title="Visitez notre grande nation"/>
+        </a>
+        <p class="adv">Un bon verre de vin convivial avec notre grand leader !</p>
+      </aside>
+
+      <aside>
+        <a href="https://www.youtube.com/watch?v=B7QNuJzQo5U">
+        <img class="adv" src="./img/gallery/10.jpg" alt="Seulement pour les HEROS !" title="Seulement pour les HEROS !"/>
+        </a>
+        <p class="adv">Ce pansement magique soulagera chacune de vos plaies !</p>
+      </aside>
+    </div>
+
+    <!-- COEUR DE LA PAGE -->
+
+    <section>
+      <figure>
+        <h1 class="centerf" id="divers">Creer un compte</h1>
+      </figure>
+    </section>
+
+    <section>
+      <figure>
+        <script src="./js/verifyinput.js"></script>
+        <form name="register" method="post" action="/htbin/register.py" id="formreg">
+          <p class="adv">Nom de famille</p>
+          <input class="register" type="text" name="lastname" value="" id="lastreg" />
+          <br />
+          <span class="errormsg" id="lastnameerror"></span>
+          <br />
+          <p class="adv">Prénom</p>
+          <input class="register" type="text" name="firstname" value="" id="firstreg" />
+          <br />
+          <span class="errormsg" id="firstnameerror"></span>
+          <br />
+          <p class="adv">Date de naissance</p>
+          <input class="register" type="text" name="birthdate" value="" id="datereg" />
+          <br />
+          <span class="errormsg" id="birthdateerror"></span>
+          <br />
+          <p class="adv">Identifiant</p>
+          <input class="register" type="text" name="username" value="" id="idreg" />
+          <br />
+          <span class="errormsg" id="usernameerror"></span>
+          <br />
+          <p class="adv">Mot de passe</p>
+          <input id="passwd" class="register" type="password" name="userpwd" value="" />
+          <br />
+          <span class="errormsg" id="userpwderror"></span>
+          <br />
+          <p class="adv">Confirmer Mot de passe</p>
+          <input class="register" type="password" name="usercpwd" value="" id="cpassreg" />
+          <br />
+          <span class="errormsg" id="usercpwderror"></span>
+          <br />
+          <p class="adv">Addresse email</p>
+          <input class="register" type="text" name="useremail" value="" id="mailreg" />
+          <br />
+          <span class="errormsg" id="useremailerror"></span>
+          <br />
+          <br />
+          <input class="register button" type="submit" name="submit" value="S'inscrire">
+          <br />
+          <span id="successmsg"></span>
+          <br />
+        </form>
+      </figure>
+    </section>
+
+    <footer>
+      <p>MemesLand - 2020</p>
+      <hr>
+      <p>Fondateurs :</p>
+      <ul>
+        <li>MARRACCINI Raphael</li>
+        <li>NGUYEN Tristan</li>
+      </ul>
+      <a href="#top">Haut de page</a>
+    </footer>
+  </body>
+</html>
