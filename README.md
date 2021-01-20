@@ -38,6 +38,11 @@
 2人 - 2 people
 19 / 20点
 
+### Linear Regression and Probabilities (Statistics)
+
+2人 - 2 people
+？？/ 20点 (Unknown Mark)
+
 ### Memes Land (Web Client)
 
 2人 - 2 people
