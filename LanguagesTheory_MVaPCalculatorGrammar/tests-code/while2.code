@@ -1,0 +1,16 @@
+int f
+int f1
+int f2
+int n
+readln(n)
+
+f1 = 1
+f2=1
+f=1
+while (n>=2) {
+ f=f1+f2
+ f2=f1
+ f1=f
+ n=n-1
+ }
+println(f)

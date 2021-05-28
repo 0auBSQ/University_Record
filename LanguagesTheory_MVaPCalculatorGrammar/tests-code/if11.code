@@ -1,0 +1,6 @@
+int i
+i=11
+if(i<11) {
+i=i+2
+writeln(i)
+}

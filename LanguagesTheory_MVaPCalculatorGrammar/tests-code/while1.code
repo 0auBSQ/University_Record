@@ -1,0 +1,17 @@
+int y
+int za
+int endthen
+int endelse
+endthen = 0
+endelse = 0
+readln(x)
+readln(y)
+readln(za)
+while (x == 0 and endthen == 0){
+  println(y)
+  endthen=1
+}
+while (x!= 0 and endelse == 0){
+  println(za)
+  endelse=1
+}

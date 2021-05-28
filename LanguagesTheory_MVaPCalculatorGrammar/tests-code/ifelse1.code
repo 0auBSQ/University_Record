@@ -1,0 +1,8 @@
+int u
+int za
+u = 1
+za = 42
+if (za > u)
+ println(u)  
+else
+ println(za)

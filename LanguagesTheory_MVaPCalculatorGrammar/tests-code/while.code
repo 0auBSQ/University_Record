@@ -1,0 +1,5 @@
+int i
+
+i = 0
+while ( false or i <= 40) i = i + 2
+println(i)

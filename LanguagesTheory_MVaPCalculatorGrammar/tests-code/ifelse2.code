@@ -1,0 +1,13 @@
+int u
+int e
+int za
+e=0
+readln(u)
+readln(za)
+
+if (za < u) println(u)  
+   else {
+   if (za > u)
+      println(za)
+   else println (e)
+   }
